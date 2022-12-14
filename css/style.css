@@ -9,6 +9,58 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    flex-direction: column;
+}
+
+.button-container{
+    padding: 1rem;
+}
+
+.button-container button{
+    padding: 10px;
+    font-size: 18px;
+}
+
+#reverse{
+    background-color: orange;
+    color: white;
+    cursor: pointer;
+}
+
+#reverse:hover{
+    background-color: rgb(254, 198, 93)
+}
+
+#reverse:active{
+    background-color: orange;
+}
+
+#start{
+    background-color: green;
+    color: white;
+    cursor: pointer;
+}
+
+#start:hover{
+    background-color: rgb(53, 201, 53);
+}
+
+#start:active{
+    background-color: green;
+}
+
+#stop{
+    background-color: red;
+    color: white;
+    cursor: pointer;
+}
+
+#stop:hover{
+    background-color: rgb(110, 22, 22);
+}
+
+#stop:active{
+    background-color: red;
 }
 
 .slider{
@@ -51,11 +103,11 @@
     z-index: 1;
 }
 
-.next{
+.prev{
     top: 5px; 
 }
 
-.prev{
+.next{
     bottom: 5px;
 }
 
@@ -81,8 +133,12 @@
 .caption{
     position: absolute;
     bottom: 10px;
-    right: 50%;
+    right: 10px;
     color: white;
+    text-align: right;
+    width: calc(100% - 20px);
+    background-color: rgba(0, 0, 0 , 0.5);
+    padding: 10px;
 }
 
 .circles-container{
