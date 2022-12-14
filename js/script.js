@@ -72,6 +72,7 @@ let check = true;
 
 start_btn.addEventListener('click', function(){
     clearInterval(loop);
+    clearInterval(loop_reverse);
     loop = setInterval(goToNextSlides, 2000);
     check = true;
 
@@ -86,6 +87,8 @@ stop_btn.addEventListener('click', function(){
 });
 
 reverse_btn.addEventListener('click', function(){
+    clearInterval(loop);
+    clearInterval(loop_reverse);
     loop_reverse = setInterval(goToPreviousSlides, 2000);
     check = false;
 })
