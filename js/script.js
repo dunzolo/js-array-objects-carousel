@@ -59,11 +59,11 @@ image[itemActive].classList.add('d-block');
 const prev = document.querySelector('.prev');
 const next = document.querySelector('.next');
 
+let loop = setInterval(goToNextSlides, 2000);
+
 next.addEventListener('click', goToNextSlides);
 
 prev.addEventListener('click', goToPreviousSlides);
-
-console.log(array.length);
 
 function goToNextSlides(){
     if(itemActive == 0)
