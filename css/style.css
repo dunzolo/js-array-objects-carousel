@@ -68,6 +68,23 @@
     border: 3px solid rgb(164, 234, 103);
 }
 
+.d-none{
+    display: none;
+}
+
+.d-block{
+    display: block;
+    height: 100%;
+    position: relative;
+}
+
+.caption{
+    position: absolute;
+    bottom: 10px;
+    right: 50%;
+    color: white;
+}
+
 .circles-container{
     display: flex;
     justify-content: center;
