@@ -31,14 +31,8 @@ const image_left = document.querySelector('.item-left');
 
 //creiamo dinamicamente i div con le immagini del carosello
 array.forEach((elem) => {
-    items_slider.innerHTML += `
-        <div class="item">
-            <img src="${elem.url_image}">
-        </div>
-    `;
-
     image_left.innerHTML += `
-        <div class="d-none">
+        <div class="main-image">
             <img src="${elem.url_image}">
             <div class="caption">
                 <h3>${elem.title}</h3>
@@ -46,6 +40,13 @@ array.forEach((elem) => {
             </div>
         </div>
     `;
+
+    items_slider.innerHTML += `
+        <div class="item">
+            <img src="${elem.url_image}">
+        </div>
+    `;
+
 });
 
 let itemActive = 0;
@@ -53,7 +54,16 @@ let itemActive = 0;
 const items = document.getElementsByClassName('item');
 items[itemActive].classList.add('active');
 
-const image = document.getElementsByClassName('d-none');
+for(let i = 0; i < items.length; i++){
+    let item = items[i];
+    item.addEventListener('click', function(){
+        removeClassActive(itemActive);
+        itemActive = i;
+        addClassActive(itemActive);
+    })
+}
+
+const image = document.getElementsByClassName('main-image');
 image[itemActive].classList.add('d-block');
 
 const circles = document.getElementsByClassName('circle');
@@ -124,7 +134,6 @@ function goToPreviousSlides(){
         addClassActive(itemActive);
     }
 }
-
 
 function removeClassActive(itemActive){
     items[itemActive].classList.remove('active');
